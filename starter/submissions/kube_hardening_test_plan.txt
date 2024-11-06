@@ -1,0 +1,7 @@
+How will you test the changes?
+
+We will begin by deploying the changes in a staging environment that mirrors our production setup. This includes using the same configurations, resource limits, and network policies. We will utilize automated testing tools such as Kube-bench to run security checks against the cluster. Additionally, we will perform load testing using tools like Apache JMeter or Locust to simulate user traffic and monitor the cluster's response under stress. We will also conduct functional tests to verify that all services are operating as expected, including checking the health of pods and services through the Kubernetes API and dashboards.
+
+How will you ensure the changes don't negatively affect your cluster?
+
+To ensure that the changes do not negatively affect the cluster, we will implement a monitoring strategy using Prometheus and Grafana. This will allow us to track key performance indicators (KPIs) such as CPU and memory usage, response times, and error rates in real-time. We will establish baseline metrics before applying the changes and compare them to the metrics collected during and after the deployment. Furthermore, we will use Kubernetes' built-in features, such as readiness and liveness probes, to ensure that only healthy pods receive traffic. In the event of any issues, we will have a rollback plan in place to revert to the previous stable state quickly.
